@@ -1,50 +1,28 @@
 # SmartPropAI
 
-> A web application to help you find your next rental property.
+> Aplikasi web untuk membantu Anda menemukan properti sewa berikutnya.
+## Fitur
 
-This is the main project from my [Next 14 From Scratch Course](https://www.traversymedia.com/nextjs-from-scratch)
+Berikut beberapa fitur yang dimiliki SmartPropAI:
 
-## Important notes
+- [x] Autentikasi pengguna dengan Google & Next Auth
+- [x] Otorisasi pengguna
+- [x] Perlindungan rute
+- [x] Profil pengguna dengan daftar properti pengguna
+- [x] CRUD Daftar Properti
+- [x] Unggah gambar properti (Multiple)
+- [x] Pencarian properti
+- [x] Pesan internal dengan notifikasi 'belum dibaca'
+- [x] Galeri gambar Photoswipe
+- [x] Peta Mapbox
+- [x] Notifikasi Toast
+- [x] Penandaan properti / properti yang disimpan
+- [x] Berbagi properti ke media sosial
+- [x] Pemintal loading
+- [x] Desain responsif (Tailwind)
+- [x] Halaman 404 khusus
 
-If you are following along with the course and running into issues, then please
-take the time to read the README in the [bugfix branch](https://github.com/bradtraversy/property-pulse/tree/bugfix)
-as this solves many common problems.
-
-There is also a [refactor branch](https://github.com/bradtraversy/property-pulse/tree/refactor)
-where the code has been heavily refactored to stay true to NextJS recommended
-best practices by using querying the database directly from our server
-components for data fetching, and performing updates and adding data using
-server actions.  
-The refactor also makes deployment a fair bit smoother.  
-The course is currently being re recorded for a re release using the code in
-the refactor branch.
-
-The `_theme_files` folder contains the pure HTML files with Tailwind classes.
-
-<img src="/public/images/screen.jpg" />
-
-## Features
-
-Here are some of the current features that SmartPropAI has:
-
-- [x] User authentication with Google & Next Auth
-- [x] User authorization
-- [x] Route protection
-- [x] User profile with user listings
-- [x] Property Listing CRUD
-- [x] Property image upload (Multiple)
-- [x] Property search
-- [x] Internal messages with 'unread' notifications
-- [x] Photoswipe image gallery
-- [x] Mapbox maps
-- [x] Toast notifications
-- [x] Property bookmarking / saved properties
-- [x] Property sharing to social media
-- [x] Loading spinners
-- [x] Responsive design (Tailwind)
-- [x] Custom 404 page
-
-SmartPropAI uses the following technologies:
+SmartPropAI menggunakan teknologi berikut:
 
 - [Next.js](https://nextjs.org/)
 - [React](https://reactjs.org/)
@@ -62,44 +40,22 @@ SmartPropAI uses the following technologies:
 - [React Toastify](https://fkhadra.github.io/react-toastify/)
 - [React Share](https://www.npmjs.com/package/react-share)
 
-## Getting Started
+## Memulai
 
-### Prerequisites
+### Prasyarat
 
-- Node.js version 18 or higher
-- MongoDB Atlas account and a cluster. Sign up and create a cluster at [MongoDB](https://www.mongodb.com/)
-- Cloudinary account. Sign up at [Cloudinary](https://cloudinary.com/)
-- Google console account. Sign up at [Google Cloud](https://console.cloud.google.com/)
-- Mapbox account. Sign up at [Mapbox](https://www.mapbox.com/)
+- Node.js versi 18 atau lebih tinggi
+- Akun MongoDB Atlas dan kluster. Daftar dan buat kluster di [MongoDB](https://www.mongodb.com/)
+- Akun Cloudinary. Daftar di [Cloudinary](https://cloudinary.com/)
+- Akun Google console. Daftar di [Google Cloud](https://console.cloud.google.com/)
+- Akun Mapbox. Daftar di [Mapbox](https://www.mapbox.com/)
 
-### `.env` File
+### File `.env`
 
-Rename the `env.example` file to `.env` and fill in the following environment variables:
+Ganti nama file `env.example` menjadi `.env` dan isi variabel lingkungan berikut:
 
-- Get your MongoDB connection string from your MongoDB Atlas cluster and add it to `MONGODB_URI`.
-- Get your Google client ID and secret from your Google console account and add them to `GOOGLE_CLIENT_ID` and `GOOGLE_CLIENT_SECRET`.
-- Add a secret to `NEXTAUTH_SECRET`. You can generate with the following command:
+- Dapatkan string koneksi MongoDB Anda dari kluster MongoDB Atlas Anda dan tambahkan ke `MONGODB_URI`.
+- Dapatkan ID klien Google dan rahasia dari akun Google console Anda dan tambahkan ke `GOOGLE_CLIENT_ID` dan `GOOGLE_CLIENT_SECRET`.
+- Tambahkan rahasia ke `NEXTAUTH_SECRET`. Anda dapat menghasilkan dengan perintah berikut:
   ```bash
   openssl rand -base64 32
-  ```
-- Get your Cloudinary cloud name, API key, and API secret from your Cloudinary account and add them to `CLOUDINARY_CLOUD_NAME`, `CLOUDINARY_API_KEY`, and `CLOUDINARY_API_SECRET`.
-- Get your Mapbox token from your Mapbox account and add it to `NEXT_PUBLIC_MAPBOX_TOKEN`.
-- Get your Google Geocoding API key from your Google console account and add it to `NEXT_PUBLIC_GOOGLE_GEOCODING_API_KEY`.
-
-### Install Dependencies
-
-```bash
-npm install
-```
-
-### Run the Development Server
-
-```bash
-npm run dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
