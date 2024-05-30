@@ -1,4 +1,4 @@
-# Property Pulse
+# SmartPropAI
 
 > A web application to help you find your next rental property.
 
@@ -25,7 +25,7 @@ The `_theme_files` folder contains the pure HTML files with Tailwind classes.
 
 ## Features
 
-Here are some of the current features that Property Pulse has:
+Here are some of the current features that SmartPropAI has:
 
 - [x] User authentication with Google & Next Auth
 - [x] User authorization
@@ -44,7 +44,7 @@ Here are some of the current features that Property Pulse has:
 - [x] Responsive design (Tailwind)
 - [x] Custom 404 page
 
-Property Pulse uses the following technologies:
+SmartPropAI uses the following technologies:
 
 - [Next.js](https://nextjs.org/)
 - [React](https://reactjs.org/)

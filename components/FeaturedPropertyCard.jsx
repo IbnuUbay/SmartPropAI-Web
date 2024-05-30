@@ -9,15 +9,19 @@ import {
 } from 'react-icons/fa';
 
 const FeaturedPropertyCard = ({ property }) => {
+  const formatCurrency = (value) => {
+    return new Intl.NumberFormat('id-ID', { style: 'currency', currency: 'IDR' }).format(value);
+  };
+
   const getRateDisplay = () => {
     const { rates } = property;
 
     if (rates.monthly) {
-      return `${rates.monthly.toLocaleString()}/mo`;
+      return `${formatCurrency(rates.monthly)}/bulan`;
     } else if (rates.weekly) {
-      return `${rates.weekly.toLocaleString()}/wk`;
+      return `${formatCurrency(rates.weekly)}/minggu`;
     } else if (rates.nightly) {
-      return `${rates.nightly.toLocaleString()}/night`;
+      return `${formatCurrency(rates.nightly)}/malam`;
     }
   };
 
@@ -35,40 +39,40 @@ const FeaturedPropertyCard = ({ property }) => {
         <h3 className='text-xl font-bold'>{property.name}</h3>
         <div className='text-gray-600 mb-4'>{property.type}</div>
         <h3 className='absolute top-[10px] left-[10px] bg-white px-4 py-2 rounded-lg text-blue-500 font-bold text-right md:text-center lg:text-right'>
-          ${getRateDisplay()}
+          {getRateDisplay()}
         </h3>
         <div className='flex justify-center gap-4 text-gray-500 mb-4'>
           <p>
             <FaBed className='inline-block mr-2' /> {property.beds}{' '}
-            <span className='md:hidden lg:inline'>Beds</span>
+            <span className='md:hidden lg:inline'>Kamar Tidur</span>
           </p>
           <p>
             <FaBath className='inline-block mr-2' /> {property.baths}{' '}
-            <span className='md:hidden lg:inline'>Baths</span>
+            <span className='md:hidden lg:inline'>Kamar Mandi</span>
           </p>
           <p>
             <FaRulerCombined className='inline-block mr-2' />
             {property.square_feet}{' '}
-            <span className='md:hidden lg:inline'>sqft</span>
+            <span className='md:hidden lg:inline'>Meter Persegi</span>
           </p>
         </div>
 
         <div className='flex justify-center gap-4 text-green-900 text-sm mb-4'>
           {property.rates.nightly && (
             <p>
-              <FaMoneyBill className='inline mr-2' /> Nightly
+              <FaMoneyBill className='inline mr-2' /> Permalam
             </p>
           )}
 
           {property.rates.weekly && (
             <p>
-              <FaMoneyBill className='inline mr-2' /> Weekly
+              <FaMoneyBill className='inline mr-2' /> Perminggu
             </p>
           )}
 
           {property.rates.monthly && (
             <p>
-              <FaMoneyBill className='inline mr-2' /> Monthly
+              <FaMoneyBill className='inline mr-2' /> Perbulan
             </p>
           )}
         </div>
@@ -94,4 +98,5 @@ const FeaturedPropertyCard = ({ property }) => {
     </div>
   );
 };
+
 export default FeaturedPropertyCard;

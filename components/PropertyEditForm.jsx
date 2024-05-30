@@ -142,12 +142,12 @@ const PropertyEditForm = () => {
     !loading && (
       <form onSubmit={handleSubmit}>
         <h2 className='text-3xl text-center font-semibold mb-6'>
-          Edit Property
+          Ubah Properti
         </h2>
 
         <div className='mb-4'>
           <label htmlFor='type' className='block text-gray-700 font-bold mb-2'>
-            Property Type
+            Tipe Properti
           </label>
           <select
             id='type'
@@ -157,25 +157,25 @@ const PropertyEditForm = () => {
             value={fields.type}
             onChange={handleChange}
           >
-            <option value='Apartment'>Apartment</option>
-            <option value='Condo'>Condo</option>
-            <option value='House'>House</option>
-            <option value='Cabin Or Cottage'>Cabin or Cottage</option>
-            <option value='Room'>Room</option>
+            <option value='Apartment'>Apartemen</option>
+            <option value='Condo'>Rumah Susun</option>
+            <option value='House'>Rumah</option>
+            <option value='Cabin Or Cottage'>Cabin atau Pondok</option>
+            <option value='Room'>Ruangan</option>
             <option value='Studio'>Studio</option>
             <option value='Other'>Other</option>
           </select>
         </div>
         <div className='mb-4'>
           <label className='block text-gray-700 font-bold mb-2'>
-            Listing Name
+            Nama Properti
           </label>
           <input
             type='text'
             id='name'
             name='name'
             className='border rounded w-full py-2 px-3 mb-2'
-            placeholder='eg. Beautiful Apartment In Miami'
+            placeholder='Contoh : Rumah Modern di Indramayu'
             required
             value={fields.name}
             onChange={handleChange}
@@ -186,21 +186,21 @@ const PropertyEditForm = () => {
             htmlFor='description'
             className='block text-gray-700 font-bold mb-2'
           >
-            Description
+            Deskripsi
           </label>
           <textarea
             id='description'
             name='description'
             className='border rounded w-full py-2 px-3'
             rows='4'
-            placeholder='Add an optional description of your property'
+            placeholder='Tambahkan deskripsi tentang properti anda'
             value={fields.description}
             onChange={handleChange}
           ></textarea>
         </div>
 
         <div className='mb-4 bg-blue-50 p-4'>
-          <label className='block text-gray-700 font-bold mb-2'>Location</label>
+          <label className='block text-gray-700 font-bold mb-2'>Lokasi</label>
           <input
             type='text'
             id='street'

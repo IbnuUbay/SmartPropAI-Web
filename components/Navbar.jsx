@@ -64,10 +64,10 @@ const Navbar = () => {
           <div className='flex flex-1 items-center justify-center md:items-stretch md:justify-start'>
             {/* <!-- Logo --> */}
             <Link className='flex flex-shrink-0 items-center' href='/'>
-              <Image className='h-10 w-auto' src={logo} alt='PropertyPulse' />
+              <Image className='h-10 w-auto' src={logo} alt='SmartPropAI' />
 
               <span className='hidden md:block text-white text-2xl font-bold ml-2'>
-                PropertyPulse
+                SmartPropAI
               </span>
             </Link>
             {/* <!-- Desktop Menu Hidden below md screens --> */}
@@ -79,7 +79,7 @@ const Navbar = () => {
                     pathname === '/' ? 'bg-black' : ''
                   } text-white hover:bg-gray-900 hover:text-white rounded-md px-3 py-2`}
                 >
-                  Home
+                  Beranda
                 </Link>
                 <Link
                   href='/properties'
@@ -87,7 +87,7 @@ const Navbar = () => {
                     pathname === '/properties' ? 'bg-black' : ''
                   } text-white hover:bg-gray-900 hover:text-white rounded-md px-3 py-2`}
                 >
-                  Properties
+                  Properti
                 </Link>
                 {session && (
                   <Link
@@ -96,7 +96,7 @@ const Navbar = () => {
                       pathname === '/properties/add' ? 'bg-black' : ''
                     } text-white hover:bg-gray-900 hover:text-white rounded-md px-3 py-2`}
                   >
-                    Add Property
+                    Jual Properti
                   </Link>
                 )}
               </div>
@@ -115,7 +115,7 @@ const Navbar = () => {
                       className='flex items-center text-white bg-gray-700 hover:bg-gray-900 hover:text-white rounded-md px-3 py-2'
                     >
                       <FaGoogle className='text-white mr-2' />
-                      <span>Login or Register</span>
+                      <span>Masuk dan Daftar</span>
                     </button>
                   ))}
               </div>

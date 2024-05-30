@@ -55,12 +55,12 @@ const PropertyContactForm = ({ property }) => {
 
   return (
     <div className='bg-white p-6 rounded-lg shadow-md'>
-      <h3 className='text-xl font-bold mb-6'>Contact Property Manager</h3>
+      <h3 className='text-xl font-bold mb-6'>Hubungi Manajer Properti</h3>
       {!session ? (
-        <p>You must be logged in to send a message</p>
+        <p>Anda harus login untuk mengirim pesan</p>
       ) : wasSubmitted ? (
         <p className='text-green-500 mb-4'>
-          Your message has been sent successfully
+          Pesan Anda berhasil dikirim
         </p>
       ) : (
         <form onSubmit={handleSubmit}>
@@ -69,13 +69,13 @@ const PropertyContactForm = ({ property }) => {
               className='block text-gray-700 text-sm font-bold mb-2'
               htmlFor='name'
             >
-              Name:
+              Nama :
             </label>
             <input
               className='shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline'
               id='name'
               type='text'
-              placeholder='Enter your name'
+              placeholder='Masukkan nama Anda'
               required
               value={name}
               onChange={(e) => setName(e.target.value)}
@@ -86,13 +86,13 @@ const PropertyContactForm = ({ property }) => {
               className='block text-gray-700 text-sm font-bold mb-2'
               htmlFor='email'
             >
-              Email:
+              Email :
             </label>
             <input
               className='shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline'
               id='email'
               type='email'
-              placeholder='Enter your email'
+              placeholder='Masukkan email anda'
               required
               value={email}
               onChange={(e) => setEmail(e.target.value)}
@@ -103,13 +103,13 @@ const PropertyContactForm = ({ property }) => {
               className='block text-gray-700 text-sm font-bold mb-2'
               htmlFor='phone'
             >
-              Phone:
+              Nomor Telepon :
             </label>
             <input
               className='shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline'
               id='phone'
               type='text'
-              placeholder='Enter your phone number'
+              placeholder='Masukkan nomor telepon anda'
               value={phone}
               onChange={(e) => setPhone(e.target.value)}
             />
@@ -119,12 +119,12 @@ const PropertyContactForm = ({ property }) => {
               className='block text-gray-700 text-sm font-bold mb-2'
               htmlFor='message'
             >
-              Message:
+              Pesan :
             </label>
             <textarea
               className='shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 h-44 focus:outline-none focus:shadow-outline'
               id='message'
-              placeholder='Enter your message'
+              placeholder='Masukkan pesan Anda'
               value={message}
               onChange={(e) => setMessage(e.target.value)}
             ></textarea>
@@ -134,7 +134,7 @@ const PropertyContactForm = ({ property }) => {
               className='bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-full w-full focus:outline-none focus:shadow-outline flex items-center justify-center'
               type='submit'
             >
-              <FaPaperPlane className='mr-2' /> Send Message
+              <FaPaperPlane className='mr-2' /> Kirim Pesan
             </button>
           </div>
         </form>
