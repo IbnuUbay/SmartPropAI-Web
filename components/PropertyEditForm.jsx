@@ -142,12 +142,12 @@ const PropertyEditForm = () => {
     !loading && (
       <form onSubmit={handleSubmit}>
         <h2 className='text-3xl text-center font-semibold mb-6'>
-          Edit Property
+          Ubah Properti
         </h2>
 
         <div className='mb-4'>
           <label htmlFor='type' className='block text-gray-700 font-bold mb-2'>
-            Property Type
+            Tipe Properti
           </label>
           <select
             id='type'
@@ -157,25 +157,25 @@ const PropertyEditForm = () => {
             value={fields.type}
             onChange={handleChange}
           >
-            <option value='Apartment'>Apartment</option>
-            <option value='Condo'>Condo</option>
-            <option value='House'>House</option>
-            <option value='Cabin Or Cottage'>Cabin or Cottage</option>
-            <option value='Room'>Room</option>
+            <option value='Apartment'>Apartemen</option>
+            <option value='Condo'>Rumah Susun</option>
+            <option value='House'>Rumah</option>
+            <option value='Cabin Or Cottage'>Cabin atau Pondok</option>
+            <option value='Room'>Ruangan</option>
             <option value='Studio'>Studio</option>
             <option value='Other'>Other</option>
           </select>
         </div>
         <div className='mb-4'>
           <label className='block text-gray-700 font-bold mb-2'>
-            Listing Name
+            Nama Properti
           </label>
           <input
             type='text'
             id='name'
             name='name'
             className='border rounded w-full py-2 px-3 mb-2'
-            placeholder='eg. Beautiful Apartment In Miami'
+            placeholder='Contoh : Rumah Modern di Indramayu'
             required
             value={fields.name}
             onChange={handleChange}
@@ -186,21 +186,21 @@ const PropertyEditForm = () => {
             htmlFor='description'
             className='block text-gray-700 font-bold mb-2'
           >
-            Description
+            Deskripsi
           </label>
           <textarea
             id='description'
             name='description'
             className='border rounded w-full py-2 px-3'
             rows='4'
-            placeholder='Add an optional description of your property'
+            placeholder='Tambahkan deskripsi tentang properti anda'
             value={fields.description}
             onChange={handleChange}
           ></textarea>
         </div>
 
         <div className='mb-4 bg-blue-50 p-4'>
-          <label className='block text-gray-700 font-bold mb-2'>Location</label>
+          <label className='block text-gray-700 font-bold mb-2'>Lokasi</label>
           <input
             type='text'
             id='street'
@@ -247,7 +247,7 @@ const PropertyEditForm = () => {
               htmlFor='beds'
               className='block text-gray-700 font-bold mb-2'
             >
-              Beds
+              Kamar Tidur
             </label>
             <input
               type='number'
@@ -264,7 +264,7 @@ const PropertyEditForm = () => {
               htmlFor='baths'
               className='block text-gray-700 font-bold mb-2'
             >
-              Baths
+              Kamar Mandi
             </label>
             <input
               type='number'
@@ -281,7 +281,7 @@ const PropertyEditForm = () => {
               htmlFor='square_feet'
               className='block text-gray-700 font-bold mb-2'
             >
-              Square Feet
+              Meter Persegi
             </label>
             <input
               type='number'
@@ -297,7 +297,7 @@ const PropertyEditForm = () => {
 
         <div className='mb-4'>
           <label className='block text-gray-700 font-bold mb-2'>
-            Amenities
+            Fasilitas
           </label>
           <div className='grid grid-cols-2 md:grid-cols-3 gap-2'>
             <div>
@@ -322,7 +322,7 @@ const PropertyEditForm = () => {
                 checked={fields.amenities.includes('Full Kitchen')}
                 onChange={handleAmenitiesChange}
               />
-              <label htmlFor='amenity_kitchen'>Full kitchen</label>
+              <label htmlFor='amenity_kitchen'>Dapur</label>
             </div>
             <div>
               <input
@@ -334,7 +334,7 @@ const PropertyEditForm = () => {
                 checked={fields.amenities.includes('Washer & Dryer')}
                 onChange={handleAmenitiesChange}
               />
-              <label htmlFor='amenity_washer_dryer'>Washer & Dryer</label>
+              <label htmlFor='amenity_washer_dryer'>Mesin Cuci & Pengering</label>
             </div>
             <div>
               <input
@@ -346,7 +346,7 @@ const PropertyEditForm = () => {
                 checked={fields.amenities.includes('Free Parking')}
                 onChange={handleAmenitiesChange}
               />
-              <label htmlFor='amenity_free_parking'>Free Parking</label>
+              <label htmlFor='amenity_free_parking'>Gratis Parkir</label>
             </div>
             <div>
               <input
@@ -358,7 +358,7 @@ const PropertyEditForm = () => {
                 checked={fields.amenities.includes('Swimming Pool')}
                 onChange={handleAmenitiesChange}
               />
-              <label htmlFor='amenity_pool'>Swimming Pool</label>
+              <label htmlFor='amenity_pool'>Kolam Renang</label>
             </div>
             <div>
               <input
@@ -370,7 +370,7 @@ const PropertyEditForm = () => {
                 checked={fields.amenities.includes('Hot Tub')}
                 onChange={handleAmenitiesChange}
               />
-              <label htmlFor='amenity_hot_tub'>Hot Tub</label>
+              <label htmlFor='amenity_hot_tub'>Bak Mandi Air Hangat</label>
             </div>
             <div>
               <input
@@ -395,7 +395,7 @@ const PropertyEditForm = () => {
                 onChange={handleAmenitiesChange}
               />
               <label htmlFor='amenity_wheelchair_accessible'>
-                Wheelchair Accessible
+                Ramah Difabel
               </label>
             </div>
             <div>
@@ -408,7 +408,7 @@ const PropertyEditForm = () => {
                 checked={fields.amenities.includes('Elevator Access')}
                 onChange={handleAmenitiesChange}
               />
-              <label htmlFor='amenity_elevator_access'>Elevator Access</label>
+              <label htmlFor='amenity_elevator_access'>Akses Lift</label>
             </div>
             <div>
               <input
@@ -420,7 +420,7 @@ const PropertyEditForm = () => {
                 checked={fields.amenities.includes('Dishwasher')}
                 onChange={handleAmenitiesChange}
               />
-              <label htmlFor='amenity_dishwasher'>Dishwasher</label>
+              <label htmlFor='amenity_dishwasher'>Mesin Pencuci Piring</label>
             </div>
             <div>
               <input
@@ -446,7 +446,7 @@ const PropertyEditForm = () => {
                 checked={fields.amenities.includes('Air Conditioning')}
                 onChange={handleAmenitiesChange}
               />
-              <label htmlFor='amenity_air_conditioning'>Air Conditioning</label>
+              <label htmlFor='amenity_air_conditioning'>AC</label>
             </div>
             <div>
               <input
@@ -458,7 +458,7 @@ const PropertyEditForm = () => {
                 checked={fields.amenities.includes('Balcony/Patio')}
                 onChange={handleAmenitiesChange}
               />
-              <label htmlFor='amenity_balcony_patio'>Balcony/Patio</label>
+              <label htmlFor='amenity_balcony_patio'>Balcon</label>
             </div>
             <div>
               <input
@@ -482,19 +482,19 @@ const PropertyEditForm = () => {
                 checked={fields.amenities.includes('Coffee Maker')}
                 onChange={handleAmenitiesChange}
               />
-              <label htmlFor='amenity_coffee_maker'>Coffee Maker</label>
+              <label htmlFor='amenity_coffee_maker'>Mesin Pembuat Kopi</label>
             </div>
           </div>
         </div>
 
         <div className='mb-4 bg-blue-50 p-4'>
           <label className='block text-gray-700 font-bold mb-2'>
-            Rates (Leave blank if not applicable)
+            Biaya (Biarkan kosong jika tidak berlaku)
           </label>
           <div className='flex flex-col space-y-4 sm:flex-row sm:space-y-0 sm:space-x-4'>
             <div className='flex items-center'>
               <label htmlFor='weekly_rate' className='mr-2'>
-                Weekly
+                Perminggu
               </label>
               <input
                 type='number'
@@ -507,7 +507,7 @@ const PropertyEditForm = () => {
             </div>
             <div className='flex items-center'>
               <label htmlFor='monthly_rate' className='mr-2'>
-                Monthly
+                Perbulan
               </label>
               <input
                 type='number'
@@ -520,7 +520,7 @@ const PropertyEditForm = () => {
             </div>
             <div className='flex items-center'>
               <label htmlFor='nightly_rate' className='mr-2'>
-                Nightly
+                Permalam
               </label>
               <input
                 type='number'
@@ -539,7 +539,7 @@ const PropertyEditForm = () => {
             htmlFor='seller_name'
             className='block text-gray-700 font-bold mb-2'
           >
-            Seller Name
+            Nama Penjual
           </label>
           <input
             type='text'
@@ -556,7 +556,7 @@ const PropertyEditForm = () => {
             htmlFor='seller_email'
             className='block text-gray-700 font-bold mb-2'
           >
-            Seller Email
+            Email Penjual
           </label>
           <input
             type='email'
@@ -574,7 +574,7 @@ const PropertyEditForm = () => {
             htmlFor='seller_phone'
             className='block text-gray-700 font-bold mb-2'
           >
-            Seller Phone
+            Telepon Penjual
           </label>
           <input
             type='tel'
@@ -592,7 +592,7 @@ const PropertyEditForm = () => {
             className='bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-full w-full focus:outline-none focus:shadow-outline'
             type='submit'
           >
-            Update Property
+            Update Properti
           </button>
         </div>
       </form>

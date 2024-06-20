@@ -3,37 +3,41 @@ import { useState, useEffect } from 'react';
 import { usePathname } from 'next/navigation';
 import Image from 'next/image';
 import Link from 'next/link';
+import { FaGoogle } from 'react-icons/fa';
+import { signIn, signOut, getSession, getProviders } from 'next-auth/react';
 import logo from '@/assets/images/logo-white.png';
 import profileDefault from '@/assets/images/profile.png';
-import { FaGoogle } from 'react-icons/fa';
-import { signIn, signOut, useSession, getProviders } from 'next-auth/react';
 import UnreadMessageCount from './UnreadMessageCount';
 
 const Navbar = () => {
-  const { data: session } = useSession();
-  const profileImage = session?.user?.image;
-
+  const [session, setSession] = useState(null);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isProfileMenuOpen, setIsProfileMenuOpen] = useState(false);
   const [providers, setProviders] = useState(null);
-
   const pathname = usePathname();
 
   useEffect(() => {
+    const fetchSession = async () => {
+      const sessionData = await getSession();
+      setSession(sessionData);
+    };
+
     const setAuthProviders = async () => {
       const res = await getProviders();
       setProviders(res);
     };
 
+    fetchSession();
     setAuthProviders();
   }, []);
 
+  const profileImage = session?.user?.image || profileDefault;
+
   return (
-    <nav className='bg-blue-700 border-b border-blue-500'>
+    <nav className='bg-blue-700 border-b border-blue-900'>
       <div className='mx-auto max-w-7xl px-2 sm:px-6 lg:px-8'>
         <div className='relative flex h-20 items-center justify-between'>
           <div className='absolute inset-y-0 left-0 flex items-center md:hidden'>
-            {/* <!-- Mobile menu button--> */}
             <button
               type='button'
               id='mobile-dropdown-button'
@@ -62,15 +66,12 @@ const Navbar = () => {
           </div>
 
           <div className='flex flex-1 items-center justify-center md:items-stretch md:justify-start'>
-            {/* <!-- Logo --> */}
             <Link className='flex flex-shrink-0 items-center' href='/'>
-              <Image className='h-10 w-auto' src={logo} alt='PropertyPulse' />
-
+              <Image className='h-10 w-auto' src={logo} alt='SmartPropAI' />
               <span className='hidden md:block text-white text-2xl font-bold ml-2'>
-                PropertyPulse
+                SmartPropAI
               </span>
             </Link>
-            {/* <!-- Desktop Menu Hidden below md screens --> */}
             <div className='hidden md:ml-6 md:block'>
               <div className='flex space-x-2'>
                 <Link
@@ -79,7 +80,7 @@ const Navbar = () => {
                     pathname === '/' ? 'bg-black' : ''
                   } text-white hover:bg-gray-900 hover:text-white rounded-md px-3 py-2`}
                 >
-                  Home
+                  Beranda
                 </Link>
                 <Link
                   href='/properties'
@@ -87,7 +88,7 @@ const Navbar = () => {
                     pathname === '/properties' ? 'bg-black' : ''
                   } text-white hover:bg-gray-900 hover:text-white rounded-md px-3 py-2`}
                 >
-                  Properties
+                  Properti
                 </Link>
                 {session && (
                   <Link
@@ -96,14 +97,21 @@ const Navbar = () => {
                       pathname === '/properties/add' ? 'bg-black' : ''
                     } text-white hover:bg-gray-900 hover:text-white rounded-md px-3 py-2`}
                   >
-                    Add Property
+                    Jual Properti
                   </Link>
                 )}
+                <Link
+                  href='/cek-harga'
+                  className={`${
+                    pathname === '/cek-harga' ? 'bg-black' : ''
+                  } text-white hover:bg-gray-900 hover:text-white rounded-md px-3 py-2`}
+                >
+                  Cek Harga
+                </Link>
               </div>
             </div>
           </div>
 
-          {/* <!-- Right Side Menu (Logged Out) --> */}
           {!session && (
             <div className='hidden md:block md:ml-6'>
               <div className='flex items-center'>
@@ -115,14 +123,13 @@ const Navbar = () => {
                       className='flex items-center text-white bg-gray-700 hover:bg-gray-900 hover:text-white rounded-md px-3 py-2'
                     >
                       <FaGoogle className='text-white mr-2' />
-                      <span>Login or Register</span>
+                      <span>Masuk dan Daftar</span>
                     </button>
                   ))}
               </div>
             </div>
           )}
 
-          {/* <!-- Right Side Menu (Logged In) --> */}
           {session && (
             <div className='absolute inset-y-0 right-0 flex items-center pr-2 md:static md:inset-auto md:ml-6 md:pr-0'>
               <Link href='/messages' className='relative group'>
@@ -149,7 +156,6 @@ const Navbar = () => {
                 </button>
                 <UnreadMessageCount session={session} />
               </Link>
-              {/* <!-- Profile dropdown button --> */}
               <div className='relative ml-3'>
                 <div>
                   <button
@@ -164,7 +170,7 @@ const Navbar = () => {
                     <span className='sr-only'>Open user menu</span>
                     <Image
                       className='h-8 w-8 rounded-full'
-                      src={profileImage || profileDefault}
+                      src={profileImage}
                       alt=''
                       width={40}
                       height={40}
@@ -172,7 +178,6 @@ const Navbar = () => {
                   </button>
                 </div>
 
-                {/* <!-- Profile dropdown --> */}
                 {isProfileMenuOpen && (
                   <div
                     id='user-menu'
@@ -226,7 +231,6 @@ const Navbar = () => {
         </div>
       </div>
 
-      {/* <!-- Mobile menu, show/hide based on menu state. --> */}
       {isMobileMenuOpen && (
         <div id='mobile-menu'>
           <div className='space-y-1 px-2 pb-3 pt-2'>
@@ -236,7 +240,7 @@ const Navbar = () => {
                 pathname === '/' ? 'bg-black' : ''
               } text-white block rounded-md px-3 py-2 text-base font-medium`}
             >
-              Home
+              Beranda
             </Link>
             <Link
               href='/properties'
@@ -244,7 +248,7 @@ const Navbar = () => {
                 pathname === '/properties' ? 'bg-black' : ''
               } text-white block rounded-md px-3 py-2 text-base font-medium`}
             >
-              Properties
+              Properti
             </Link>
             {session && (
               <Link
@@ -253,9 +257,17 @@ const Navbar = () => {
                   pathname === '/properties/add' ? 'bg-black' : ''
                 } text-white block rounded-md px-3 py-2 text-base font-medium`}
               >
-                Add Property
+                Jual Properti
               </Link>
             )}
+            <Link
+              href='/cek-harga'
+              className={`${
+                pathname === '/cek-harga' ? 'bg-black' : ''
+              } text-white block rounded-md px-3 py-2 text-base font-medium`}
+            >
+              Cek Harga
+            </Link>
 
             {!session &&
               providers &&
@@ -274,4 +286,5 @@ const Navbar = () => {
     </nav>
   );
 };
+
 export default Navbar;

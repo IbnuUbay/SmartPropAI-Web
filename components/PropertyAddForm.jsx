@@ -107,12 +107,12 @@ const PropertyAddForm = () => {
         encType='multipart/form-data'
       >
         <h2 className='text-3xl text-center font-semibold mb-6'>
-          Add Property
+          Jual Properti
         </h2>
 
         <div className='mb-4'>
           <label htmlFor='type' className='block text-gray-700 font-bold mb-2'>
-            Property Type
+            Tipe Properti
           </label>
           <select
             id='type'
@@ -122,25 +122,25 @@ const PropertyAddForm = () => {
             value={fields.type}
             onChange={handleChange}
           >
-            <option value='Apartment'>Apartment</option>
-            <option value='Condo'>Condo</option>
-            <option value='House'>House</option>
-            <option value='Cabin Or Cottage'>Cabin or Cottage</option>
-            <option value='Room'>Room</option>
+            <option value='Apartment'>Apartemen</option>
+            <option value='Condo'>Rumah Susun</option>
+            <option value='House'>Rumah</option>
+            <option value='Cabin Or Cottage'>Kabin atau Pondok</option>
+            <option value='Room'>Ruangan</option>
             <option value='Studio'>Studio</option>
             <option value='Other'>Other</option>
           </select>
         </div>
         <div className='mb-4'>
           <label className='block text-gray-700 font-bold mb-2'>
-            Listing Name
+            Nama Properti
           </label>
           <input
             type='text'
             id='name'
             name='name'
             className='border rounded w-full py-2 px-3 mb-2'
-            placeholder='eg. Beautiful Apartment In Miami'
+            placeholder='Contoh : Rumah Modern Di Indramayu'
             required
             value={fields.name}
             onChange={handleChange}
@@ -151,27 +151,27 @@ const PropertyAddForm = () => {
             htmlFor='description'
             className='block text-gray-700 font-bold mb-2'
           >
-            Description
+            Deskripsi
           </label>
           <textarea
             id='description'
             name='description'
             className='border rounded w-full py-2 px-3'
             rows='4'
-            placeholder='Add an optional description of your property'
+            placeholder='Tambahkan deskripsi tentang properti anda'
             value={fields.description}
             onChange={handleChange}
           ></textarea>
         </div>
 
         <div className='mb-4 bg-blue-50 p-4'>
-          <label className='block text-gray-700 font-bold mb-2'>Location</label>
+          <label className='block text-gray-700 font-bold mb-2'>Lokasi</label>
           <input
             type='text'
             id='street'
             name='location.street'
             className='border rounded w-full py-2 px-3 mb-2'
-            placeholder='Street'
+            placeholder='Jalan'
             value={fields.location.street}
             onChange={handleChange}
           />
@@ -180,7 +180,7 @@ const PropertyAddForm = () => {
             id='city'
             name='location.city'
             className='border rounded w-full py-2 px-3 mb-2'
-            placeholder='City'
+            placeholder='Kota'
             required
             value={fields.location.city}
             onChange={handleChange}
@@ -190,7 +190,7 @@ const PropertyAddForm = () => {
             id='state'
             name='location.state'
             className='border rounded w-full py-2 px-3 mb-2'
-            placeholder='State'
+            placeholder='Negara'
             required
             value={fields.location.state}
             onChange={handleChange}
@@ -200,7 +200,7 @@ const PropertyAddForm = () => {
             id='zipcode'
             name='location.zipcode'
             className='border rounded w-full py-2 px-3 mb-2'
-            placeholder='Zipcode'
+            placeholder='Kode Pos'
             value={fields.location.zipcode}
             onChange={handleChange}
           />
@@ -212,7 +212,7 @@ const PropertyAddForm = () => {
               htmlFor='beds'
               className='block text-gray-700 font-bold mb-2'
             >
-              Beds
+              Kamar Tidur
             </label>
             <input
               type='number'
@@ -229,7 +229,7 @@ const PropertyAddForm = () => {
               htmlFor='baths'
               className='block text-gray-700 font-bold mb-2'
             >
-              Baths
+              Kamar Mandi
             </label>
             <input
               type='number'
@@ -246,7 +246,7 @@ const PropertyAddForm = () => {
               htmlFor='square_feet'
               className='block text-gray-700 font-bold mb-2'
             >
-              Square Feet
+              Meter Persegi
             </label>
             <input
               type='number'
@@ -262,7 +262,7 @@ const PropertyAddForm = () => {
 
         <div className='mb-4'>
           <label className='block text-gray-700 font-bold mb-2'>
-            Amenities
+            Fasilitas
           </label>
           <div className='grid grid-cols-2 md:grid-cols-3 gap-2'>
             <div>
@@ -287,7 +287,7 @@ const PropertyAddForm = () => {
                 checked={fields.amenities.includes('Full Kitchen')}
                 onChange={handleAmenitiesChange}
               />
-              <label htmlFor='amenity_kitchen'>Full kitchen</label>
+              <label htmlFor='amenity_kitchen'>Dapur</label>
             </div>
             <div>
               <input
@@ -299,7 +299,7 @@ const PropertyAddForm = () => {
                 checked={fields.amenities.includes('Washer & Dryer')}
                 onChange={handleAmenitiesChange}
               />
-              <label htmlFor='amenity_washer_dryer'>Washer & Dryer</label>
+              <label htmlFor='amenity_washer_dryer'>Mesin Cuci & Pengering</label>
             </div>
             <div>
               <input
@@ -311,7 +311,7 @@ const PropertyAddForm = () => {
                 checked={fields.amenities.includes('Free Parking')}
                 onChange={handleAmenitiesChange}
               />
-              <label htmlFor='amenity_free_parking'>Free Parking</label>
+              <label htmlFor='amenity_free_parking'>Gratis Parkir</label>
             </div>
             <div>
               <input
@@ -323,7 +323,7 @@ const PropertyAddForm = () => {
                 checked={fields.amenities.includes('Swimming Pool')}
                 onChange={handleAmenitiesChange}
               />
-              <label htmlFor='amenity_pool'>Swimming Pool</label>
+              <label htmlFor='amenity_pool'>Kolam Renang</label>
             </div>
             <div>
               <input
@@ -335,7 +335,7 @@ const PropertyAddForm = () => {
                 checked={fields.amenities.includes('Hot Tub')}
                 onChange={handleAmenitiesChange}
               />
-              <label htmlFor='amenity_hot_tub'>Hot Tub</label>
+              <label htmlFor='amenity_hot_tub'>Bak Mandi Air Panas</label>
             </div>
             <div>
               <input
@@ -360,7 +360,7 @@ const PropertyAddForm = () => {
                 onChange={handleAmenitiesChange}
               />
               <label htmlFor='amenity_wheelchair_accessible'>
-                Wheelchair Accessible
+              Ramah Difabel
               </label>
             </div>
             <div>
@@ -373,7 +373,7 @@ const PropertyAddForm = () => {
                 checked={fields.amenities.includes('Elevator Access')}
                 onChange={handleAmenitiesChange}
               />
-              <label htmlFor='amenity_elevator_access'>Elevator Access</label>
+              <label htmlFor='amenity_elevator_access'>Akses Lift</label>
             </div>
             <div>
               <input
@@ -385,7 +385,7 @@ const PropertyAddForm = () => {
                 checked={fields.amenities.includes('Dishwasher')}
                 onChange={handleAmenitiesChange}
               />
-              <label htmlFor='amenity_dishwasher'>Dishwasher</label>
+              <label htmlFor='amenity_dishwasher'>Mesin Cuci Piring</label>
             </div>
             <div>
               <input
@@ -423,7 +423,7 @@ const PropertyAddForm = () => {
                 checked={fields.amenities.includes('Balcony/Patio')}
                 onChange={handleAmenitiesChange}
               />
-              <label htmlFor='amenity_balcony_patio'>Balcony/Patio</label>
+              <label htmlFor='amenity_balcony_patio'>Balcon</label>
             </div>
             <div>
               <input
@@ -447,19 +447,19 @@ const PropertyAddForm = () => {
                 checked={fields.amenities.includes('Coffee Maker')}
                 onChange={handleAmenitiesChange}
               />
-              <label htmlFor='amenity_coffee_maker'>Coffee Maker</label>
+              <label htmlFor='amenity_coffee_maker'>Mesin Pembuat Kopi</label>
             </div>
           </div>
         </div>
 
         <div className='mb-4 bg-blue-50 p-4'>
           <label className='block text-gray-700 font-bold mb-2'>
-            Rates (Leave blank if not applicable)
+            Biaya Kontrak/Sewa (Biarkan kosong jika tidak berlaku)
           </label>
           <div className='flex flex-col space-y-4 sm:flex-row sm:space-y-0 sm:space-x-4'>
             <div className='flex items-center'>
               <label htmlFor='weekly_rate' className='mr-2'>
-                Weekly
+                Perminggu
               </label>
               <input
                 type='number'
@@ -472,7 +472,7 @@ const PropertyAddForm = () => {
             </div>
             <div className='flex items-center'>
               <label htmlFor='monthly_rate' className='mr-2'>
-                Monthly
+                Perbulan
               </label>
               <input
                 type='number'
@@ -485,7 +485,7 @@ const PropertyAddForm = () => {
             </div>
             <div className='flex items-center'>
               <label htmlFor='nightly_rate' className='mr-2'>
-                Nightly
+                Permalam
               </label>
               <input
                 type='number'
@@ -504,7 +504,7 @@ const PropertyAddForm = () => {
             htmlFor='seller_name'
             className='block text-gray-700 font-bold mb-2'
           >
-            Seller Name
+            Nama Penjual
           </label>
           <input
             type='text'
@@ -521,7 +521,7 @@ const PropertyAddForm = () => {
             htmlFor='seller_email'
             className='block text-gray-700 font-bold mb-2'
           >
-            Seller Email
+            Email Penjual
           </label>
           <input
             type='email'
@@ -539,7 +539,7 @@ const PropertyAddForm = () => {
             htmlFor='seller_phone'
             className='block text-gray-700 font-bold mb-2'
           >
-            Seller Phone
+            Nomor Telepon Penjual
           </label>
           <input
             type='tel'
@@ -557,7 +557,7 @@ const PropertyAddForm = () => {
             htmlFor='images'
             className='block text-gray-700 font-bold mb-2'
           >
-            Images (Select up to 4 images)
+            Gambar (Pilih hingga 4 gambar)
           </label>
           <input
             type='file'
@@ -576,7 +576,7 @@ const PropertyAddForm = () => {
             className='bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-full w-full focus:outline-none focus:shadow-outline'
             type='submit'
           >
-            Add Property
+            Jual Properti
           </button>
         </div>
       </form>
